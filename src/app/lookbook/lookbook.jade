@@ -1,0 +1,24 @@
+.look
+   .look--slider(screen-height, ng-style='{ transform: "translate3d(" + look.sliderPosition + "px, 0, 0)"}')
+       .look--slide(ng-repeat='slide in look.slides',
+                ng-class='{ "look--slide__previous": look.current-1 === $index, "look--slide__current": look.current === $index,"look--slide__next": look.current+1 === $index }',
+                ng-show='look.current >= $index-1 && look.current <= $index+1',
+                ng-style='{ backgroundImage: "url({{slide.img}})", width: slide.width + "px", transform: "translate3d(" + slide.left + "px, 0, 0)" }',
+                ng-click='look.move($index)')
+           .look--header
+                header {{slide.title}}
+            .look--slide__items-wrapper
+               .look--slide__items
+                   .look--slide__item(ng-repeat='item in slide.items')
+                       .look--slide__item-image
+                           img(ng-src='http://www.love-sl.ru/LOOKBOOK/img/LOOK1/item1.jpg')
+                       .look--slide__item-caption
+                           .look--slide__item-header
+                                |КОЛЬЦО <br/> 16 БРИЛЛИАНТОВ <br/> ЗОЛОТО 585°
+                           .look--slide__item-price 5 555 Р.
+           .look--slide__elements
+   .look--footer
+       img.look--slide__picture(ng-repeat='slide in look.slides',
+                ng-src='{{slide.img}}',
+                sl-load='look.setSlideWidth($event, slide)',
+                screen-height)
