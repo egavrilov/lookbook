@@ -43,16 +43,18 @@ class LookbookCtrl {
     this.renderSlides();
   }
 
-  getPosition(slide){
-    let index = this.slides.indexOf(slide) + 1;
-    return {
-      width: slide.width + this.margin * 2,
-      left: slide.left + index * 2 * this.margin
-    }
-  }
+  //getPosition(slide){
+  //  let index = this.slides.indexOf(slide) + 1;
+  //  return {
+  //    width: slide.width + this.margin * 2,
+  //    left: slide.left + index * 2 * this.margin
+  //  }
+  //}
 
   setSlideWidth(event, slide){
-    slide.width = event.path[0].clientWidth;
+    slide.width = this.horizontal ?
+      window.innerWidth :
+      event.path[0].clientWidth;
   }
   renderSlides(){
     let currentLeft = 0;

@@ -1,4 +1,4 @@
-.look(ng-class='{"look--horizontal": look.horizontal }')
+.look(ng-class='{"look__horizontal": look.horizontal }')
    .look--slider(screen-height, ng-style='{ transform: "translate3d(" + look.sliderPosition + "px, 0, 0)"}')
        .look--slide(ng-repeat='slide in look.slides',
                 ng-class='{ "look--slide__previous": look.current-1 === $index, "look--slide__current": look.current === $index,"look--slide__next": look.current+1 === $index }',
@@ -7,7 +7,7 @@
                 ng-click='look.move($index)',
                 ng-swipe-left='look.swipe()',
                 ng-swipe-right='look.swipe(-1)')
-           .look--header
+           .look--header(ng-if='slide.title')
                 header {{slide.title}}
             .look--slide__items-wrapper
                .look--slide__items

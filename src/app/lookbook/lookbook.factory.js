@@ -45,7 +45,6 @@ function LookbookFactory(){
     },
     {
       img: '/assets/images/look1/04.jpg',
-      title: 'Some epic title',
       items: [
         'http://www.love-sl.ru/catalog/ring72513.html',
         'http://www.love-sl.ru/catalog/earring177998.html',
