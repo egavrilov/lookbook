@@ -1,10 +1,12 @@
-.look
+.look(ng-class='{"look--horizontal": look.horizontal }')
    .look--slider(screen-height, ng-style='{ transform: "translate3d(" + look.sliderPosition + "px, 0, 0)"}')
        .look--slide(ng-repeat='slide in look.slides',
                 ng-class='{ "look--slide__previous": look.current-1 === $index, "look--slide__current": look.current === $index,"look--slide__next": look.current+1 === $index }',
                 ng-show='look.current >= $index-1 && look.current <= $index+1',
                 ng-style='{ backgroundImage: "url({{slide.img}})", width: slide.width + "px", transform: "translate3d(" + slide.left + "px, 0, 0)" }',
-                ng-click='look.move($index)')
+                ng-click='look.move($index)',
+                ng-swipe-left='look.swipe()',
+                ng-swipe-right='look.swipe(-1)')
            .look--header
                 header {{slide.title}}
             .look--slide__items-wrapper

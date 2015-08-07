@@ -34,6 +34,7 @@ class LookbookCtrl {
     this.slides = Lookbook.slides;
     this.sliderPosition = 0;
     this.margin = MARGIN;
+    this.horizontal = window.innerWidth < window.innerHeight;
     $rootScope.$on('lookbook:imagesLoaded', () => this.init());
   }
 
@@ -63,11 +64,16 @@ class LookbookCtrl {
   }
   move(index){
     let targetSlide = this.slides[index];
+    if (!targetSlide) return;
+
     let width = targetSlide.width + 2 * this.margin;
     this.sliderPosition = index !== 0 ?
       (window.innerWidth - width) / 2  - targetSlide.left:
       (window.innerWidth - width) / 2;
     this.current = index;
+  }
+  swipe(direction){
+    this.move(this.current + (direction || 1));
   }
 }
 
