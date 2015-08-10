@@ -74,6 +74,7 @@
   width:260px;
   overflow-y: scroll;
   height: 100%;
+  background: #fff;
 }
 .look--slide__item{
   display: inline-block;
@@ -82,11 +83,17 @@
   margin: 5px;
   background-color: rgba(255,255,255,0.5);
   border-radius: 3px;
+  cursor: pointer;
+  color: #555;
+
   &:first-child{
     margin-top: 30px;
   }
   &:last-child{
     margin-bottom: 30px;
+  }
+  &:hover{
+    color: #111;
   }
 }
 .look--slide__item-image{
