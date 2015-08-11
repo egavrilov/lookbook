@@ -1,5 +1,5 @@
 .look(ng-class='{"look__horizontal": look.horizontal }')
-   .look--slider(screen-height, ng-style='{ transform: "translate3d(" + look.sliderPosition + "px, 0, 0)"}')
+   .look--slider(screen-height, sticky-scroll, ng-style='{ transform: "translate3d(" + look.sliderPosition + "px, 0, 0)"}')
        .look--slide(ng-repeat='slide in look.slides',
                 ng-class='{ "look--slide__previous": look.current-1 === $index, "look--slide__current": look.current === $index,"look--slide__next": look.current+1 === $index }',
                 ng-show='look.current >= $index-1 && look.current <= $index+1',
@@ -11,13 +11,13 @@
                 header {{slide.title}}
             .look--slide__items-wrapper
                .look--slide__items
-                       a.look--slide__item(ng-repeat='item in slide.items' ng-href='{{ slide.articles[item.article] }}')
-                           .look--slide__item-image
-                               img(ng-src='{{::item.image}}')
-                           .look--slide__item-caption
-                               .look--slide__item-header
-                                    |{{::item.type}} <br/> {{::item.description}} {{::item.material}}
-                               .look--slide__item-price {{::item.price | ruble}} Р.
+                   a.look--slide__item(ng-repeat='item in slide.items' ng-href='{{ slide.articles[item.article] }}')
+                       .look--slide__item-image
+                           img(ng-src='{{::item.image}}')
+                       .look--slide__item-caption
+                           .look--slide__item-header
+                                |{{::item.type}} <br/> {{::item.description}} {{::item.material}}
+                           .look--slide__item-price {{::item.price | ruble}} Р.
            .look--slide__elements
    .look--footer
        img.look--slide__picture(ng-repeat='slide in look.slides',

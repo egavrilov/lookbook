@@ -1,7 +1,7 @@
 function LookbookFactory($http){
   var slides = [
     {
-      img: '/assets/images/look1/01.jpg',
+      img: '/images/look1/01.jpg',
       articles: {
         '14559': 'http://www.love-sl.ru/catalog/ring72513.html',
         '20230': 'http://www.love-sl.ru/catalog/earring177998.html',
@@ -15,7 +15,7 @@ function LookbookFactory($http){
       }
     },
     {
-      img: '/assets/images/look1/02.jpg',
+      img: '/images/look1/02.jpg',
       articles: {
         '14559': 'http://www.love-sl.ru/catalog/ring72513.html',
         '20230': 'http://www.love-sl.ru/catalog/earring177998.html',
@@ -24,7 +24,7 @@ function LookbookFactory($http){
       }
     },
     {
-      img: '/assets/images/look1/03.jpg',
+      img: '/images/look1/03.jpg',
       articles: {
         '32964': 'http://www.love-sl.ru/catalog/ring243180.html',
         '33015': 'http://www.love-sl.ru/catalog/earring243253.html',
@@ -32,7 +32,7 @@ function LookbookFactory($http){
       }
     },
     {
-      img: '/assets/images/look1/04.jpg',
+      img: '/images/look1/04.jpg',
       articles: {
         '32964': 'http://www.love-sl.ru/catalog/ring243180.html',
         '23046': 'http://www.love-sl.ru/catalog/ring211706.html',
@@ -44,7 +44,7 @@ function LookbookFactory($http){
       }
     },
     {
-      img: '/assets/images/look1/05.jpg',
+      img: '/images/look1/05.jpg',
       articles: {
         '36043': ';http://www.love-sl.ru/catalog/silver/ring249084.html',
         '24488': 'http://www.love-sl.ru/catalog/ring219533.html',
@@ -54,7 +54,7 @@ function LookbookFactory($http){
       }
     },
     {
-      img: '/assets/images/look1/06.jpg',
+      img: '/images/look1/06.jpg',
       articles: {
         '17078': 'http://www.love-sl.ru/catalog/ring113490.html',
         '22030': 'http://www.love-sl.ru/catalog/silver/bracelets205563.html',
@@ -71,7 +71,7 @@ function LookbookFactory($http){
       }
     },
     {
-      img: '/assets/images/look1/07.jpg',
+      img: '/images/look1/07.jpg',
       articles: {
         '23046': 'http://www.love-sl.ru/catalog/ring211706.html',
         '32964': 'http://www.love-sl.ru/catalog/ring243180.html',
@@ -90,7 +90,7 @@ function LookbookFactory($http){
       }
     },
     {
-      img: '/assets/images/look1/08.jpg',
+      img: '/images/look1/08.jpg',
       articles: {
         '23046': 'http://www.love-sl.ru/catalog/ring211706.html',
         '32964': 'http://www.love-sl.ru/catalog/ring243180.html',
