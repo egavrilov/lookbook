@@ -1,16 +1,16 @@
 .look(ng-class='{"look__horizontal": look.horizontal }')
-   .look--slider(screen-height, sticky-scroll, ng-style='{ transform: "translate3d(" + look.sliderPosition + "px, 0, 0)"}')
+   .look--slider(ng-style='{ transform: "translate3d(" + look.sliderPosition + "px, 0, 0)"}', ng-if='!look.horizontal')
        .look--slide(ng-repeat='slide in look.slides',
                 ng-class='{ "look--slide__previous": look.current-1 === $index, "look--slide__current": look.current === $index,"look--slide__next": look.current+1 === $index }',
                 ng-show='look.current >= $index-1 && look.current <= $index+1',
-                ng-style='{ backgroundImage: "url({{slide.img}})", width: slide.width + "px", transform: "translate3d(" + slide.left + "px, 0, 0)" }',
+                ng-style='{ backgroundImage: "url({{slide.img}})", width: slide.width + "px", height: slide.height + "px", transform: "translate3d(" + slide.left + "px, 0, 0)" }',
                 ng-click='look.move($index)',
                 ng-swipe-left='look.swipe()',
                 ng-swipe-right='look.swipe(-1)')
            .look--header(ng-if='slide.title')
                 header {{slide.title}}
             .look--slide__items-wrapper
-               .look--slide__items
+               .look--slide__items(ng-style='{ height: slide.height + "px" }')
                    a.look--slide__item(ng-repeat='item in slide.items' ng-href='{{ slide.articles[item.article] }}')
                        .look--slide__item-image
                            img(ng-src='{{::item.image}}')
@@ -19,8 +19,10 @@
                                 |{{::item.type}} <br/> {{::item.description}} {{::item.material}}
                            .look--slide__item-price {{::item.price | ruble}} Р.
            .look--slide__elements
-   .look--footer
+   .look--footer(ng-if='!look.horizontal')
        img.look--slide__picture(ng-repeat='slide in look.slides',
                 ng-src='{{slide.img}}',
                 sl-load='look.setSlideWidth($event, slide)',
                 screen-height)
+   .look-fail(ng-if='look.horizontal')
+    | Просмотр коллекции к сожалению не работает на мобильных устройствах.

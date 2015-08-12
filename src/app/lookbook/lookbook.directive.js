@@ -66,10 +66,17 @@ class LookbookCtrl {
   }
 
   setSlideWidth(event, slide){
-    slide.width = this.horizontal ?
-      window.innerWidth :
-      event.path[0].clientWidth;
+    if (this.horizontal) {
+      slide.width = window.innerWidth;
+    } else {
+      slide.width = event.target.clientWidth + 200 > window.innerWidth ?
+        event.target.clientWidth :
+        event.target.clientWidth - 200;
+    }
+    slide.height = slide.width / event.target.clientWidth * event.target.clientHeight;
+    event.target.parentNode.style.height = slide.height + 'px';
   }
+
   renderSlides(){
     let currentLeft = 0;
     for (let slide of this.slides) {

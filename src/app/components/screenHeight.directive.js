@@ -18,7 +18,11 @@ class ScreenHeightCtrl{
   }
 
   setSize(){
-    this.$element.css('height', this.$window.innerHeight + 'px');
+    if (this.$window.innerWidth > this.$window.innerHeight) {
+      this.$element.css('height', this.$window.innerHeight + 'px');
+    } else {
+      this.$element.css('width', this.$window.innerWidth + 'px');
+    }
   }
 }
 

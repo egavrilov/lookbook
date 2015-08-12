@@ -21,11 +21,23 @@
 .header--logo{
   cursor: pointer;
   width: 10%;
+  min-width: 184px;
   height: 41px;
   background: url('http://cdn1.love.sl/love.sl/lookbook/images/logo.svg') 0 0 no-repeat;
   background-size: 184px 41px;
   display: inline-block;
   margin: 10px 0.5% 0;
+
+  @media @tablet{
+    margin-top: 15px;
+    position: absolute;
+  }
+
+  @media @mobile {
+    position: relative;
+    margin-left: 50%;
+    left: -92px;
+  }
 }
 
 .header--sitemenu{
@@ -44,6 +56,15 @@
 
   @media @tablet{
     text-align: center;
+    line-height: 20px;
+    width: auto;
+    margin: 5px 0 20px 194px;
+    display: block;
+  }
+
+  @media @mobile{
+    display: block;
+    margin: 0 auto;
   }
 
   &>.item{
@@ -67,7 +88,8 @@
     @media @tablet{
       margin: .11%;
       min-width: 0;
-      width: 10.89%;
+      line-height: 20px;
+      width: 33%;
     }
 
     @media @mobile{
