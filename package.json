@@ -1,7 +1,9 @@
 {
   "name": "slLookbook",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "es6-symbol": "^2.0.1"
+  },
   "scripts": {
     "test": "gulp test"
   },
