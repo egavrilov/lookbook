@@ -1,5 +1,5 @@
 .look(ng-class='{"look__horizontal": look.horizontal }')
-   .look--slider(ng-style='{ transform: "translate3d(" + look.sliderPosition + "px, 0, 0)"}', ng-if='!look.horizontal')
+   .look--slider(ng-style='{ transform: "translate3d(" + look.sliderPosition + "px, 0, 0)"}', ng-if='!look.noSupport')
        .look--slide(ng-repeat='slide in look.slides',
                 ng-class='{ "look--slide__previous": look.current-1 === $index, "look--slide__current": look.current === $index,"look--slide__next": look.current+1 === $index }',
                 ng-show='look.current >= $index-1 && look.current <= $index+1',
@@ -19,11 +19,11 @@
                                 |{{::item.type}} <br/> {{::item.description}} {{::item.material}}
                            .look--slide__item-price {{::item.price | ruble}} Р.
            .look--slide__elements
-   .look--footer(ng-if='!look.horizontal')
+   .look--footer(ng-if='!look.noSupport')
        img.look--slide__picture(ng-repeat='slide in look.slides',
                 ng-src='{{slide.img}}',
                 sl-load='look.setSlideWidth($event, slide)',
                 screen-height)
-   .look-fail(ng-if='look.horizontal')
+   .look-fail(ng-if='look.noSupport')
     | Просмотр коллекции, к сожалению, не работает на мобильных устройствах.
     | Вы можете посмотреть предметы новой коллекции <a href="http://love-sl.ru/catalog/">в каталоге</a>

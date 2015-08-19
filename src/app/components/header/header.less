@@ -25,12 +25,15 @@
   height: 41px;
   background: url('http://cdn1.love.sl/love.sl/lookbook/images/logo.svg') 0 0 no-repeat;
   background-size: 184px 41px;
-  display: inline-block;
-  margin: 10px 0.5% 0;
+  display: block;
+  margin: 10px auto;
 
   @media @tablet{
     margin-top: 15px;
     position: absolute;
+    min-width: 220px;
+    height: 55px;
+    background-size: 220px 55px;
   }
 
   @media @mobile {
@@ -38,21 +41,27 @@
     margin-left: 50%;
     left: -92px;
   }
+
+  @media @desktop-xl{
+    float: left;
+    margin: 10px 0.5% 0;
+  }
 }
 
 .header--sitemenu{
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   color: rgb(102, 102, 102);
-  display: inline-block;
+  display: block;
+  width: 100%;
   font-family: Verdana, Arial, sans-serif;
   font-size: 11px;
   font-style: normal;
   font-variant: normal;
   font-weight: normal;
   line-height: 41px;
-  margin: 10px 0 0;
-  width: 89%;
+  margin: 10px 0 10px;
   vertical-align: top;
+  text-align: center;
 
   @media @tablet{
     text-align: center;
@@ -67,26 +76,29 @@
     margin: 0 auto;
   }
 
+  @media @desktop-xl{
+    text-align: right;
+    float: right;
+    width: auto;
+  }
+
   &>.item{
     display: inline-block;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     background-attachment: scroll;
     background-clip: border-box;
-    background-color: rgb(227, 227, 227);
     background-image: none;
     background-origin: padding-box;
     background-size: auto;
     font-family: Verdana, Arial, Helvetica, sans-serif;
     font-size: 13px;
     line-height: 41px;
-    margin: 0 0.11% 0.11% 0;
     text-align: center;
     text-transform: uppercase;
-    width: 11%;
-    min-width: 100px;
+    width: 100px;
 
     @media @tablet{
-      margin: .11%;
+      margin: .75% .11%;
       min-width: 0;
       line-height: 20px;
       width: 33%;
@@ -94,6 +106,9 @@
 
     @media @mobile{
       width: 33.2%;
+    }
+
+    @media @desktop-xl{
     }
 
     &>a{

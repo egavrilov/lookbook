@@ -38,6 +38,7 @@ class LookbookCtrl {
     this.sliderPosition = 0;
     this.margin = MARGIN;
     this.horizontal = window.innerWidth < window.innerHeight;
+    this.noSupport = this.horizontal && /android|ip(ad|od|hone)/i.test(navigator.userAgent);
     this.$location = $location;
     $rootScope.$on('lookbook:imagesLoaded', () => this.init());
   }
