@@ -17,7 +17,7 @@
                        .look--slide__item-caption
                            .look--slide__item-header
                                 |{{::item.type}} <br/> {{::item.description}} {{::item.material}}
-                           .look--slide__item-price {{::item.price | ruble}} Р.
+                           .look--slide__item-price {{::item.price | lowest}} Р.
            .look--slide__elements
    .look--footer(ng-if='!look.noSupport')
        img.look--slide__picture(ng-repeat='slide in look.slides',

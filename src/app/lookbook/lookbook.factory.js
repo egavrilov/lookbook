@@ -112,7 +112,7 @@ function LookbookFactory($http){
 
   function loadItems(articles) {
     return $http({
-      url: 'https://api.love.sl/v1/catalog/products/',
+      url: 'http://api.love.sl/v1/catalog/products/',
       method: 'GET',
       params: { article: articles }
     }).then((response) => response.data.results.map((item) => {

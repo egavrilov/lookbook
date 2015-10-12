@@ -38,14 +38,14 @@ class LookbookCtrl {
     this.sliderPosition = 0;
     this.margin = MARGIN;
     this.horizontal = window.innerWidth < window.innerHeight;
-    this.noSupport = this.horizontal && /android|ip(ad|od|hone)/i.test(navigator.userAgent);
+    this.noSupport = this.horizontal && /android|ip(ad|od|hone)/i.test(window.navigator.userAgent.toLowerCase());
     this.$location = $location;
     $rootScope.$on('lookbook:imagesLoaded', () => this.init());
   }
 
   init(){
     let slide = this.$location.search().slide;
-    this.current = isNaN(slide) ? 0 : slide;
+    this.current = isNaN(slide) ? 0 : Number(slide);
     this.renderSlides();
     this.loadItems();
   }
