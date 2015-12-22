@@ -21,7 +21,7 @@ gulp.task('styles', function () {
 
   var injectFiles = gulp.src([
     path.join(conf.paths.src, '/app/fixtures.less'),
-    path.join(conf.paths.src, '/fonts/fonts.less'),
+    path.join(conf.paths.src, '/app/fonts.less'),
     path.join(conf.paths.src, '/app/**/*.less'),
     path.join('!' + conf.paths.src, '/app/index.less')
   ], { read: false });

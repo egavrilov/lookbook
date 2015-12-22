@@ -51,7 +51,7 @@ gulp.task('html', ['inject', 'partials'], function () {
     .pipe(cssFilter.restore())
     .pipe(assets.restore())
     .pipe($.useref())
-    .pipe($.revReplace())
+    .pipe($.revReplace({ prefix: conf.cdnPrefix }))
     .pipe(htmlFilter)
     .pipe($.minifyHtml({
       empty: true,
